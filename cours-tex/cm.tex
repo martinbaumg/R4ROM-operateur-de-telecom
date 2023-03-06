@@ -1,0 +1,77 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage[francais]{babel}
+\usepackage{caption}
+\usepackage{graphicx}
+\usepackage[T1]{fontenc}
+\usepackage{listings}
+\usepackage{geometry}
+\usepackage[colorlinks=true,linkcolor=black,anchorcolor=black,citecolor=black,filecolor=black,menucolor=black,runcolor=black,urlcolor=black]{hyperref}
+
+% \usepackage{mathpazo} --> Police à utiliser lors de rapports plus sérieux
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{}
+\rhead{}
+\chead{}
+\rfoot{\thepage}
+\lfoot{Martin Baumgaertner}
+\cfoot{}
+
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\begin{document}
+\begin{titlepage}
+	\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} 
+	\center 
+	\textsc{\LARGE iut de colmar}\\[6.5cm] 
+	\textsc{\Large R4ROM10}\\[0.5cm] 
+	\textsc{\large Année 2022-23}\\[0.5cm]
+	\HRule\\[0.75cm]
+	{\huge\bfseries Opérateurs de télécom}\\[0.4cm]
+	\HRule\\[1.5cm]
+	\textsc{\large martin baumgaertner}\\[6.5cm] 
+
+	\vfill\vfill\vfill
+	{\large\today} 
+	\vfill
+\end{titlepage}
+\newpage
+\tableofcontents
+\newpage
+\section{CM 1 - 6 mars 2023}
+\subsection{Traffic Engineering : MPLS-TE}
+Premièrement, le MPLS permet de faire de la communication de label au lieu
+de faire du routage. C'est bien plus rapide. C'est donc la principale raison 
+pour laquelle on utilise le MPLS, comme par exemple avec le MPLS-VPN, 
+pour interconnecter deux sites distants. 
+Le protocol IP est un protocol de niveau 3, en fonctionnant en mode non 
+connecté. 
+
+Par l'ingénierie du trafic, on peut faire du routage de label, tout en garantissant
+une qualité de service. \\
+
+\textbf{MPLS-TE permet :}\\
+\begin{itemize}
+    \item la gestion des congestions imprévues
+    \item une meilleure utilisation de la bande passante
+    \item une meilleure capacité de planification\\
+\end{itemize}
+
+MPLS crée aussi des chemins LSP routés de façon explicite, ces LSP sont appelés
+tunnels MPLS-TE. 
+
+\subsection{Les composantes de la solution MPLS-TE}
+Voici les 4 principales étapes : \\
+
+\begin{itemize}
+    \item 1. Découverte de la topologie du réseau : La première étape consiste à découvrir la topologie du réseau en utilisant des protocoles de routage de base tels que OSPF, ISIS ou BGP. Cette étape permet de cartographier le réseau et de déterminer les liens physiques entre les nœuds.
+    \item 2. Sélection du chemin optimal : Après avoir découvert la topologie du réseau, la solution MPLS-TE sélectionne le chemin optimal pour acheminer les paquets de données. Cette sélection est effectuée en utilisant des algorithmes de calcul de chemin tels que CSPF (Constrained Shortest Path First), qui prennent en compte les contraintes de bande passante, de latence et d'autres paramètres.
+    \item 3. Réservation de bande passante : Une fois le chemin optimal sélectionné, MPLS-TE réserve une quantité de bande passante pour ce chemin. Cette réservation de bande passante garantit que le chemin sélectionné ne sera pas congestionné et permet d'optimiser l'utilisation de la bande passante disponible.
+    \item 4. Établissement de l'étiquette MPLS : Enfin, MPLS-TE établit une étiquette MPLS pour les paquets de données à transmettre. Cette étiquette indique le chemin optimal sélectionné pour acheminer les paquets et permet de contourner les traitements de routage de base pour optimiser les performances du réseau.
+\end{itemize}
+
+
+
+\end{document}
