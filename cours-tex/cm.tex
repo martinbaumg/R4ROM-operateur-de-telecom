@@ -72,6 +72,89 @@ Voici les 4 principales étapes : \\
     \item 4. Établissement de l'étiquette MPLS : Enfin, MPLS-TE établit une étiquette MPLS pour les paquets de données à transmettre. Cette étiquette indique le chemin optimal sélectionné pour acheminer les paquets et permet de contourner les traitements de routage de base pour optimiser les performances du réseau.
 \end{itemize}
 
+\newpage
+\section{TD 1 - 8 mars 2023}
+	\subsection{Exercice de compréhension}
+		\subsubsection{Question 1}
+		Le MPLS-TE est une technique de routage utilisée pour optimiser 
+		le flux de données dans un réseau de télécommunications en fournissant 
+		une qualité de service garantie et une bande passante réservée pour 
+		les applications qui ont des exigences de performance élevées. 
+		Elle utilise des étiquettes pour identifier les paquets de données et 
+		déterminer le chemin optimal pour acheminer les données entre les 
+		points d'entrée et de sortie du réseau.
+
+		\subsubsection{Question 2}
+		Le MPLS classique est utilisé pour acheminer les paquets de données 
+		sur le chemin le plus court possible, tandis que le MPLS-TE est 
+		utilisé pour optimiser le chemin des paquets en tenant compte des 
+		exigences de performance et de bande passante des applications. 
+		Le MPLS-TE permet de contrôler et de réserver la bande passante pour 
+		des applications spécifiques, tandis que le MPLS classique ne prend
+		pas en compte ces exigences de performance.\\
+
+		TE : on utilise des tunnels 
+
+		\subsubsection{Question 3}
+		Un tunnel TE est un chemin de communication virtuel qui est établi 
+		entre deux nœuds MPLS pour acheminer les paquets de données en 
+		utilisant le MPLS-TE. Ce tunnel est créé en réservant une bande 
+		passante et en établissant un chemin dédié pour les données qui 
+		empruntent ce tunnel.\\
+
+		Les protocols utilisés pour créer un tunnel TE sont :\\
+		\begin{itemize}
+			\item \textbf{RSVP-TE} (Resource Reservation Protocol - Traffic Engineering) : utilisé pour la réservation de bande passante et la sélection du chemin optimal pour acheminer les paquets de données.
+			\item \textbf{LDP} (Label Distribution Protocol) : utilisé pour établir les étiquettes MPLS pour les paquets de données.
+		\end{itemize}
+
+		\newpage
+		\subsubsection{Question 4}
+		Le protocol IP ne suffit pas car il ne peut pas garantir une qualité
+		de service et surtout, il ne peut pas répondre aux éxigences des 
+		services de voix, vidéo d'autres applicatifs. 
+
+		\subsubsection{Question 5}
+		Voici les 4 étapes princaples pour l'utilisation du protocol MPLS-TE 
+		: \\
+		\begin{enumerate}
+			\item \textbf{Distribution des informatioins} : quelles informations sont à récupérer ? 
+			\item \textbf{Calcul du chemin} : Dynamique ou manuel ? 
+			\item \textbf{Mise en place du chemin} : RSVP-TE ou CR-LDP ? 
+			\item \textbf{Transférer le flux via le tunnel} : Autoroute, static ou policy ? 
+		\end{enumerate}
+
+		\subsubsection{Question 6}
+		Pour établir les tunnels TE, les routeurs échangent des 
+		informations de signalisation à l'aide de deux protocoles
+		principaux : RSVP-TE (Resource Reservation Protocol - Traffic 
+		Engineering) et LDP (Label Distribution Protocol).
+
+		\subsubsection{Question 7}
+		Ce sont les mêmes qu'à la questioin 6. 
+
+		\subsubsection{Question 8}
+		La détermination des chemins qui vont être utilisés par un tunnel 
+		MPLS-TE est basée sur les exigences de qualité de service des 
+		applications et sur la topologie du réseau. Le chemin optimal est 
+		déterminé en fonction de la bande passante disponible, des contraintes 
+		de qualité de service, de la topologie du réseau et des préférences 
+		de routage.
+
+		\newpage
+		\subsubsection{Question 9}
+		Il existe plusieurs options pour transférer les données sur un 
+		tunnel MPLS-TE, selon les besoins de l'application et la configuration
+		du réseau :\\
+		\begin{itemize}
+			\item Le mode Pipe (ou mode Uniform) : Dans ce mode, les paquets de données sont transférés sur le tunnel en utilisant la bande passante réservée pour le tunnel MPLS-TE. Tous les paquets qui empruntent le tunnel doivent respecter les paramètres de qualité de service (QoS) spécifiés lors de la création du tunnel.
+			\item Le mode Short-Pipe : Dans ce mode, les paquets sont transférés sur le tunnel en utilisant l'étiquette MPLS associée au tunnel, mais la bande passante n'est pas réservée pour le tunnel. Les paramètres de QoS sont appliqués uniquement jusqu'à la sortie du dernier routeur d'entrée du tunnel, puis les paquets peuvent être acheminés de manière standard.
+			\item Le mode Full-Pipe : Dans ce mode, les paquets sont transférés sur le tunnel en utilisant la bande passante réservée pour le tunnel MPLS-TE, mais les paramètres de QoS sont appliqués de manière dynamique tout au long du chemin du tunnel.
+		\end{itemize}
+
+		\subsection{Les attributs}
+		\subsubsection{Question 1}
+		
 
 
 \end{document}
